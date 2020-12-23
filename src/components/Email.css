@@ -1,0 +1,91 @@
+/* EMAIL */
+.email-wrapper {
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    width: 350px;
+}
+.email-input {
+    position: relative;
+    border: none;
+    border-radius: 0;;
+    width: 100%;
+    background: transparent;
+    padding: 10px 0;
+}
+.email-input:focus {
+    outline: none;
+}
+.email-label {
+    color: #a9a9a9;
+    user-select: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    text-align: left;
+    font-size: 16px;
+    padding: 10px 0 5px;
+    pointer-events: none;
+}
+.email-label::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #a9a9a9;
+    left: 0;
+    top: 100%;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.email-label-content {
+    display: block;
+    transform-origin: 0 0;
+    transition: transform 0.3s, color 0.3s;
+}
+.email-input:focus + .email-label .email-label-content,
+.active .email-label .email-label-content {
+    color: #a9a9a9;
+    -webkit-transform: translate3d(0, 35px, 0) scale3d(0.655, 0.655, 1);
+    transform: translate3d(0, 35px, 0) scale3d(0.655, 0.655, 1);
+}
+.email-input:focus + .email-label::after,
+.active .email-label::after {
+    background: #a9a9a9;
+    transform: scale3d(1, 0.5, 1);
+}
+
+.email-input:focus + .email-label.valid .email-label-content,
+.active .email-label.valid .email-label-content {
+    color: #9ACD32;
+}
+.email-input:focus + .email-label.valid::after,
+.active .email-label.valid::after {
+    background: #9ACD32;
+}
+
+/* PROVIDER LIST */
+.email-provider-wrapper {
+    text-align: left;
+    font-size: 12px;
+    color: #9ACD32;
+    position: absolute;
+    top: -25px;
+}
+.email-provider {
+    padding: 5px 15px;
+    margin-right: 15px;
+    user-select: none;
+    cursor: pointer;
+    border: 2px solid #9ACD32;
+    border-radius: 15px;
+    transition-duration: 0.3s;
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+}
+.email-provider:hover {
+    background-color: #9ACD32;
+    color: #fff;
+}
